@@ -1,0 +1,13 @@
+.skin {
+    display: block;
+    width: 100%;
+}
+
+.skin img{
+    width: 50%;
+    object-fit: cover;
+}
+
+.skin title{
+    background-color:  gold;
+}
