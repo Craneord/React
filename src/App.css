@@ -37,16 +37,7 @@
   }
 }
 
-.NavBar{
-  background-color: #282c34;
-}
-.NavDecorations {
-  text-decoration: none;
-  padding: 5px;
-  color: aqua;
-  font-size: 3vh;
- 
-}
+
 .NavListado{
   list-style: none;
   display: flex;
