@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react"
-import ItemContador from "../ItemContador";
+
 import Title from "../Title";
 import ItemList from "../ItemList";
 import { useParams } from "react-router-dom";
@@ -36,14 +36,11 @@ export const ItemListContainer = ({greeting}) =>{
 
     },[categoriaId])
 
-    const onAdd = (cantidad) => {
-        console.log (`Unidades seleccionadas ${cantidad}`)
-    }
+ 
     
     return (
         <div>
         <Title greeting ={greeting}/>
-        <ItemContador inicial ={1} stock= {10} onAdd={onAdd}/>
         <ItemList data={data}/>
         
         </div>

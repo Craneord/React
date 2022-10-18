@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 
 
 
+
 const skins =[
     {id : 1, image:"https://static1-es.millenium.gg/articles/9/48/28/9/@/261649-preludio-al-caos-skins-valorant-article_cover_bd-1.jpg", category:"armas", title:"Chaos"},
     {id:2, image:"https://cdn.oneesports.gg/cdn-data/2022/05/Valorant_Neptune_Skin_Bundle.webp", category:"armas", title:"Neptune"},
@@ -17,7 +18,7 @@ const skins =[
 ];
 
 export const ItemDetailContainer = () =>{
-     const [data, setData] = useState=({});
+     const [data, setData] = useState({});
      const {detalleId} = useParams();
     
      useEffect(() => {
