@@ -2,21 +2,24 @@ import React, {useState} from "react";
 import "./itemDetail.css"
 import ItemContador from "../ItemContador";
 import { Link } from "react-router-dom";
+import { useCartContext } from "../../context/CartContext";
 
 
 
 export const ItemDetail = ({ data }) =>{
     const [goToCart, setGoToCart] = useState(false)
+    const {addProduct} = useCartContext()
 
-    const onAdd = (cantidad) => {
+    const onAdd = (quantity) => {
         setGoToCart(true)
+        addProduct(data, quantity)
     }
 
     return(
-        <div className="contenedor">
+        <div className="container">
             <div className="detail">
                 <img className="detailImage" src={data.image} alt=""/>
-                <div className="contenido">
+                <div className="content">
                     <h1>{data.title}</h1>
                     {
                         goToCart
