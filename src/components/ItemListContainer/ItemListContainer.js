@@ -1,17 +1,9 @@
 import React, {useState, useEffect} from "react"
-
+import {getFirestore, collection, getDocs, query, where} from "firebase/firestore";
 import Title from "../Title";
 import ItemList from "../ItemList";
 import { useParams } from "react-router-dom";
 
-const skins =[
-    {id : 1, image:"https://static1-es.millenium.gg/articles/9/48/28/9/@/261649-preludio-al-caos-skins-valorant-article_cover_bd-1.jpg", category:"armas", title:"Chaos"},
-    {id:2, image:"https://cdn.oneesports.gg/cdn-data/2022/05/Valorant_Neptune_Skin_Bundle.webp", category:"armas", title:"Neptune"},
-    {id:3, image:"https://www.theloadout.com/wp-content/sites/theloadout/2021/08/valorant-skins.jpg", category:"armas", title:"MagePunk"},
-    {id : 4, image:"https://earlygame.com/uploads/images/_1200x630_crop_center-center_82_none/valorant-gun-buddies.jpg?mtime=1645126608", category:"amuleto", title:"buddies"},
-    {id:5, image:"https://pbs.twimg.com/media/EZa0NNtXQAIbWOM.jpg", category:"amuleto", title:"Rangos"},
-
-];
 
 
 
@@ -22,16 +14,19 @@ export const ItemListContainer = ({greeting}) =>{
     const {categoriaId} = useParams();
 
     useEffect(()=> {
-        const getData= new Promise(resolve =>{
-            setTimeout(() => {
-                resolve(skins);
-            }, 1000);
-        });
+        
+        const querydb = getFirestore()
+        const queryCollection = collection(querydb, "products")
+        
+        
         if (categoriaId){
-            getData.then(res => setData (res.filter(objeto=> objeto.category === categoriaId)));
+           const queryFilter= query(queryCollection, where("category", "==", categoriaId))
+        getDocs(queryFilter)
+        .then(res => setData(res.docs.map(product =>({id: product.id, ... product.data() }))))
         }
         else {
-            getData.then(res => setData(res));
+            getDocs(queryCollection)
+        .then(res => setData(res.docs.map(product =>({id: product.id, ... product.data() }))))
         }
 
     },[categoriaId])
