@@ -3,6 +3,7 @@ import React, {useState, useEffect} from "react";
 import "./itemContador.css";
 
 export const ItemContador= ({inicial, stock, onAdd})=>{
+    
     const [count, setCount] = useState(parseInt(inicial))
     
     const decrease = ()=>{
@@ -18,7 +19,8 @@ export const ItemContador= ({inicial, stock, onAdd})=>{
             <span>{count}</span>
             <button disabled={count >= stock} onClick={increase}>+</button>
             <div>
-                <button disabled={stock <=0} onClick={()=> onAdd(count)}>Agregar al carrito</button>
+
+                <button disabled={stock <=0} onClick={()=>onAdd(count)}>Agregar al carrito</button>
             </div>
         </div>
     );

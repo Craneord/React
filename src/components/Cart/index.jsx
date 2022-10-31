@@ -4,6 +4,7 @@ import { useCartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import ItemCart from "../itemCart";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
+import mostrarAlerts from "../SweetAlert/alerts";
 
 const Cart = () => {
     const {cart, totalPrice} = useCartContext()
@@ -22,7 +23,7 @@ const Cart = () => {
         const db= getFirestore();
         const ordersCollection = collection (db, "orders");
         addDoc(ordersCollection, order)
-        .then(({ id }) => console.log(id))
+        .then(({ id }) => mostrarAlerts(id))
     }
     
     if (cart.length === 0){
@@ -40,10 +41,11 @@ const Cart = () => {
             {
                 cart.map(product => <ItemCart key={product.id} product={product}/> )
             }
-            <p>
-                TOTAL: {totalPrice()}
+            <p className="btnCompra">
+                TOTAL: ${totalPrice()}
+                 <><button  onClick={handleClick}>Comprar</button></>
             </p>
-            <><button onClick={handleClick}>Comprar</button></>
+           
         </>
     )
 }

@@ -9,7 +9,6 @@ const NavBar = () => {
                 <li><NavLink className="NavDecorations" to="/">Inicio</NavLink></li>
                 <li><NavLink className="NavDecorations" to="/categorias/armas">Armas</NavLink></li>
                 <li><NavLink className="NavDecorations" to="/categorias/amuleto">Amuletos</NavLink></li>
-                <li><NavLink className="NavDecorations" to="/detalle">Contacto</NavLink></li>
                 <li><NavLink className="NavDecorations" to="/cart"><CartWidget /></NavLink></li>
             </ul>
         </nav>

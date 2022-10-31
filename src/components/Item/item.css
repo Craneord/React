@@ -1,6 +1,10 @@
 .skin {
-    display: block;
+    
     width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
 }
 
 .skin img{
