@@ -2,10 +2,10 @@ import React from "react";
 import "./cart.css"
 import { useCartContext } from "../../context/cartContext";
 import { Link } from "react-router-dom";
-import ItemCart from "../ItemCart";
+import ItemCart from "../itemCart/ItemCart";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
-import mostrarAlerts from "../SweetAlert/alerts";
-import ContactForm  from "../ContactForm/contactForm";
+import mostrarAlerts from "../sweetAlert/alerts";
+import ContactForm  from "../contactForm/contactForm";
 
 const Cart = () => {
     const {cart, totalPrice} = useCartContext()

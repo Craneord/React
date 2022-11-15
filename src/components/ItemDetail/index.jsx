@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import "./itemDetail.css"
-import ItemContador from "../ItemContador";
+import ItemContador from "../itemContador";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/cartContext";
 
