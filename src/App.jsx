@@ -1,6 +1,6 @@
 import {BrowserRouter, Route ,Routes} from 'react-router-dom';
 
-import NavBar from './components/navBar/navBar.js';
+import NavBar from './components/navBar/NavBar.js';
 import ItemListContainer from './components/itemListContainer/itemListContainer';
 import './App.css';
 import ItemDetailContainer from './components/itemDetailContainer';
@@ -30,7 +30,6 @@ function App() {
         <Route path="/cart" element={<Cart />}/>
         <Route path="/detalle/:detalleId" element={<ItemDetailContainer/>}/>
       </Routes>
-      <div>NECESITO COMMMITEAR</div>
     </CartProvider>
     </BrowserRouter>
     
