@@ -1,5 +1,5 @@
 import React from "react";
-import { useCartContext } from "../../context/CartContext";
+import { useCartContext } from "../../context/cartContext";
 import "./itemCart.css"
 
 const ItemCart = ({product}) => {
@@ -9,7 +9,7 @@ const ItemCart = ({product}) => {
     <div className="itemCart">
         <img src= {product.image} alt={product.title} />
         <div>
-            <p>Titulo: {product.title}</p>
+            <p>Producto: {product.title}</p>
             <p>Cantidad: {product.quantity}</p>
             <p>Precio: ${product.price}</p>
             <p>subtotal ${product.quantity * product.price}</p>

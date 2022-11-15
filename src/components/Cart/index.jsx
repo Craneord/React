@@ -1,10 +1,11 @@
 import React from "react";
 import "./cart.css"
-import { useCartContext } from "../../context/CartContext";
+import { useCartContext } from "../../context/cartContext";
 import { Link } from "react-router-dom";
-import ItemCart from "../itemCart";
+import ItemCart from "../ItemCart";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import mostrarAlerts from "../SweetAlert/alerts";
+import ContactForm  from "../ContactForm/contactForm";
 
 const Cart = () => {
     const {cart, totalPrice} = useCartContext()
@@ -23,7 +24,7 @@ const Cart = () => {
         const db= getFirestore();
         const ordersCollection = collection (db, "orders");
         addDoc(ordersCollection, order)
-        .then(({ id }) => mostrarAlerts(id))
+        .then(({ id }) => (id))
     }
     
     if (cart.length === 0){
@@ -43,10 +44,16 @@ const Cart = () => {
             }
             <p className="btnCompra">
                 TOTAL: ${totalPrice()}
-                 <><button  onClick={handleClick}>Comprar</button></>
+                <hr/>
+                Datos del usuario
+                <hr/>
+                <ContactForm/>
+               
             </p>
            
+            
         </>
+        
     )
 }
 export default Cart

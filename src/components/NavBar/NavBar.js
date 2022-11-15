@@ -1,7 +1,7 @@
-import CartWidget from "../CartWidget/CartWidget";
+import CartWidget from "../CartWidget/cartWidget";
 import Title from "../Title";
 import { NavLink } from "react-router-dom";
-import "./NavBar.css";
+import "./navBar.css";
 const NavBar = () => {
     return(
         <nav className="NavDecorations">
