@@ -2,7 +2,7 @@ import React from "react";
 import "./cart.css"
 import { useCartContext } from "../../context/cartContext";
 import { Link } from "react-router-dom";
-import ItemCart from "../itemCart/ItemCart";
+import ItemCart from "../itemCart/itemCart";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import mostrarAlerts from "../sweetAlert/alerts";
 import ContactForm  from "../contactForm/contactForm";
