@@ -24,7 +24,7 @@ const Cart = () => {
         const db= getFirestore();
         const ordersCollection = collection (db, "orders");
         addDoc(ordersCollection, order)
-        .then(({ id }) => (id))
+        .then(({ id }) => mostrarAlerts(id))
     }
     
     if (cart.length === 0){
@@ -48,6 +48,7 @@ const Cart = () => {
                 Datos del usuario
                 <hr/>
                 <ContactForm/>
+                <button onClick={handleClick}>Comprar </button>
                
             </p>
            

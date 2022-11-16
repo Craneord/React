@@ -30,6 +30,7 @@ const ContactForm = () => {
     return (
         <div>
             {id ? (<div>Compra realizada con exito, n° operacion {id}
+                <button onClick={resetHandler}>Editar info</button>
                 <Link to="/">Volver al inicio</Link>
             </div>
             
@@ -64,7 +65,7 @@ const ContactForm = () => {
                 />
             </div>
             
-            <><button>comprar</button></>
+            <><button>Enviar</button></>
         </form>
         
     )}
